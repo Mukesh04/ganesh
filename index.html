@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <title>Ganesha</title>
+
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+  }
+  
+  #myVideo {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .pooja-items {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .pooja-items .intence {
+    width: 100px;
+    height: 150px;
+    background: url('./i.gif') no-repeat;
+    background-size: cover;
+  }
+  
+  .pooja-items .arathi {
+    width: 100px;
+    height: 100px;
+    background: url('./a.gif') no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<body id="body">
+  <video autoplay muted loop id="myVideo">
+    <source src="./gf.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="pooja-items">
+    <div class="intence"></div>
+    <div class="arathi"></div>
+  </div>
+  <script>
+    (function() {
+      var body = document.getElementById("body");
+      document.querySelectorAll(".intence").forEach(item => {
+        item.addEventListener("click", function() {
+          body.style.cursor = "url('./i.cur'), auto";
+        });
+      });
+      document.querySelectorAll(".arathi").forEach(item => {
+        item.addEventListener("click", function() {
+          body.style.cursor = "url('./a.cur'), auto";
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>
